@@ -12,8 +12,10 @@ Bubble Sort can fix such errors (ie. sort this array) in linear time.
 */
 
 	public static void bubbleSort(int[] arr) {
+	
 	    int i = 0, n = arr.length;
 	    boolean swapNeeded = true;
+	    
 	    while (i < n - 1 && swapNeeded) {
 	        swapNeeded = false;
 	        for (int j = 1; j < n - i; j++) {
@@ -24,6 +26,7 @@ Bubble Sort can fix such errors (ie. sort this array) in linear time.
 	                swapNeeded = true;
 	            }
 	        }
+		
 	        if(!swapNeeded) {
 	            break;
 	        }
