@@ -1,6 +1,6 @@
 ```java
 /*
-Te space complexity, even in the worst scenario, is O(1) as Bubble sort algorithm doesn't require any extra memory and the sorting takes place in the original array.
+The space complexity, even in the worst scenario, is O(1) as Bubble sort algorithm doesn't require any extra memory and the sorting takes place in the original array.
 In case of a sorted array, swapping won't be needed in the first iteration itself – which means we can stop the execution. 
 This is the best case scenario and the time complexity of the algorithm is O(n).
 To summarize, it's an in-place stable algorithm, with time complexity:
