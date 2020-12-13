@@ -37,7 +37,7 @@ private static int partition(int arr[], int begin, int end) {
 	        }
 	}
 	
-	//swap
+	//swap for to get proper index of pivot/partition
 	int swapTemp = arr[i+1];
 	arr[i+1] = arr[end];
 	arr[end] = swapTemp;
