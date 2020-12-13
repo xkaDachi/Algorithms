@@ -11,22 +11,31 @@ The space complexity of the algorithm is O(n) as we're creating temporary arrays
 
 //mergeSort()
 public static void mergeSort(int[] a, int n) {
+    
+    //base case
     if (n < 2) {
         return;
     }
+    
     int mid = n / 2;
     int[] leftArray = new int[mid];
     int[] rightArray = new int[n - mid];
 
+    //left side array
     for (int i = 0; i < mid; i++) {
         leftArray[i] = a[i];
     }
+    
+    //right side array
     for (int i = mid; i < n; i++) {
         rightArray[i - mid] = a[i];
     }
+    
+    //mergeSort() again both sides until we get to base case
     mergeSort(leftArray, mid);
     mergeSort(rightArray, n - mid);
 
+    //merge left and right array depending on sort
     merge(a, leftArray, rightArray, mid, n - mid);
 }
 
@@ -35,6 +44,7 @@ public static void merge(int[] a, int[] leftArray, int[] rightArray, int left, i
  
     int i = 0, j = 0, k = 0;
     
+    //compares whichever left or right side is smaller for index k in a
     while (i < left && j < right) {
         if (leftArray[i] <= rightArray[j]) {
             a[k++] = leftArray[i++];
@@ -42,9 +52,13 @@ public static void merge(int[] a, int[] leftArray, int[] rightArray, int left, i
             a[k++] = rightArray[j++];
         }
     }
+    
+    //fills the rest
     while (i < left) {
         a[k++] = leftArray[i++];
     }
+    
+    //fills the rest
     while (j < right) {
         a[k++] = rightArray[j++];
     }
