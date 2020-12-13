@@ -30,11 +30,11 @@ Bubble Sort can fix such errors (ie. sort this array) in linear time.
 	                swapNeeded = true;
 	            }
 	        }
-		
 		//array is fully sorted, we break.
 	        if(!swapNeeded) {
 	            break;
 	        }
+		//increment i for n - i at every for loop
 	        i++;
 	    }
 	}
