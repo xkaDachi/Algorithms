@@ -10,14 +10,19 @@ Therefore, Selection Sort's space complexity is O(1).
 */
 
 public static void sortAscending(final int[] arr) {
+
+    //first min is index i
     for (int i = 0; i < arr.length - 1; i++) {
         int minElementIndex = i;
+        
+        //find next mind if there is one
         for (int j = i + 1; j < arr.length; j++) {
             if (arr[minElementIndex] > arr[j]) {
                 minElementIndex = j;
             }
         }
 
+        //swap
         if (minElementIndex != i) {
             int temp = arr[i];
             arr[i] = arr[minElementIndex];
