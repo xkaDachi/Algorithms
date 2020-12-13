@@ -13,30 +13,36 @@ public static void quickSort(int arr[], int begin, int end) {
 	    	//get partition index
 	        int partitionIndex = partition(arr, begin, end);
 		
-		//sort left side and right side of partition index
+		//recursively call the same fct left and ride side of pivot/partition
 	        quickSort(arr, begin, partitionIndex-1);
 	        quickSort(arr, partitionIndex+1, end);
 	    }
 	}
-	
+
+//we compare the index of j and the index of pivot (last element)
+//if element at index j < element at index pivot; increment i and swap i and j
+//do that until we reach j == pivot; then pivot will be at index i + 1
 private static int partition(int arr[], int begin, int end) {
 	int pivot = arr[end];
 	int i = (begin-1);
 
-	 for (int j = begin; j < end; j++) {
+	//swap if element is smaller than pivot, increment i (swap index i and index j)
+	//if element is larger than pivot, we do nothing
+	for (int j = begin; j < end; j++) {
 	        if (arr[j] <= pivot) {
 	            i++;
 	            int swapTemp = arr[i];
 	            arr[i] = arr[j];
 	            arr[j] = swapTemp;
 	        }
-	    }
+	}
 	
 	//swap
 	int swapTemp = arr[i+1];
 	arr[i+1] = arr[end];
 	arr[end] = swapTemp;
 
+	//index of the pivote/partition
 	return i+1;
 }
 ```
