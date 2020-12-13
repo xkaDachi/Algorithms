@@ -15,7 +15,7 @@ public static void sortAscending(final int[] arr) {
     for (int i = 0; i < arr.length - 1; i++) {
         int minElementIndex = i;
         
-        //find next mind if there is one
+        //find next mind if there is one from index j (i + 1) to end
         for (int j = i + 1; j < arr.length; j++) {
             if (arr[minElementIndex] > arr[j]) {
                 minElementIndex = j;
