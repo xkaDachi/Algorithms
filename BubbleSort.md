@@ -18,8 +18,12 @@ Bubble Sort can fix such errors (ie. sort this array) in linear time.
 	    
 	    while (i < n - 1 && swapNeeded) {
 	        swapNeeded = false;
+		//i will decrement the size n at each i++
+		//j will start from beginning to end at each iteration
 	        for (int j = 1; j < n - i; j++) {
+		    //bigger number before smaller number, we swap
 	            if (arr[j - 1] > arr[j]) {
+		    	//swap
 	                int temp = arr[j - 1];
 	                arr[j - 1] = arr[j];
 	                arr[j] = temp;
@@ -27,6 +31,7 @@ Bubble Sort can fix such errors (ie. sort this array) in linear time.
 	            }
 	        }
 		
+		//array is fully sorted, we break.
 	        if(!swapNeeded) {
 	            break;
 	        }
