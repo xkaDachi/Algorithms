@@ -7,14 +7,21 @@ The algorithm sorts in place so its space complexity is O(1) for the imperative 
 /*
 
 public static void insertionSort(int[] input) {
-	    for (int i = 1; i < input.length; i++) { 
-	        int key = input[i]; 
-	        int j = i - 1;
-	        while (j >= 0 && input[j] > key) {
-	            input[j + 1] = input[j];
-	            j = j - 1;
-	        }
-	        input[j + 1] = key; 
+	//keep track of index of i and j (i - 1)
+	for (int i = 1; i < input.length; i++) { 
+	
+	    int key = input[i]; 
+	    int j = i - 1;
+	    
+	    //work from index 0 up to index i/j to sort
+	    while (j >= 0 && input[j] > key) {
+	    	//sort
+	        input[j + 1] = input[j];
+	        j = j - 1;
+		
 	    }
+	    //sort
+	    input[j + 1] = key; 
 	}
+}
 ```
