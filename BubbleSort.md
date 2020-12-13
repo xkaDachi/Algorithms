@@ -11,31 +11,31 @@ For example, in an almost sorted array, only two elements need to be swapped, to
 Bubble Sort can fix such errors (ie. sort this array) in linear time.
 */
 
-	public static void bubbleSort(int[] arr) {
-	
-	    int i = 0, n = arr.length;
-	    boolean swapNeeded = true;
-	    
-	    while (i < n - 1 && swapNeeded) {
-	        swapNeeded = false;
+public static void bubbleSort(int[] arr) {
+
+	int i = 0, n = arr.length;
+	boolean swapNeeded = true;
+
+	while (i < n - 1 && swapNeeded) {
+		swapNeeded = false;
 		//i will decrement the size n at each i++
 		//j will start from beginning to end at each iteration
-	        for (int j = 1; j < n - i; j++) {
-		    //bigger number before smaller number, we swap
-	            if (arr[j - 1] > arr[j]) {
-		    	//swap
-	                int temp = arr[j - 1];
-	                arr[j - 1] = arr[j];
-	                arr[j] = temp;
-	                swapNeeded = true;
-	            }
-	        }
+		for (int j = 1; j < n - i; j++) {
+			//bigger number before smaller number, we swap
+			if (arr[j - 1] > arr[j]) {
+				//swap
+				int temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+				swapNeeded = true;
+			}
+		}
 		//array is fully sorted, we break.
-	        if(!swapNeeded) {
-	            break;
-	        }
+		if(!swapNeeded) {
+			break;
+		}
 		//increment i for n - i at every for loop
-	        i++;
-	    }
+		i++;
 	}
+}
 ```
